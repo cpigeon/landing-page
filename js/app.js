@@ -21,6 +21,7 @@ const section1 = document.getElementById('section1');
 const section2 = document.getElementById('section2');
 const section3 = document.getElementById('section3');
 const section4 = document.getElementById('section4');
+const navBarList = document.getElementById("navbar__list")
 
 /**
  * End Global Variables
@@ -58,6 +59,32 @@ function isVisible (ele) {
 
 
 // build the nav
+// Add link to nav bar if section is in the viewport
+if (isVisible(section1)) {
+  // create new list item
+  const liSection1 = document.createElement('li');
+
+  // give list item a class name
+  liSection1.className = "nav_section1"
+
+  // create an anchor item
+  const aSection1 = document.createElement('a');
+
+  //give anchor a class
+  aSection1.className = "nav_section1_link";
+
+  //give anchor an href to the section
+  aSection1.setAttribute("href", "#section1");
+
+  //set text for anchor
+  aSection1.innerHTML = "Section 1"
+
+  // append anchor to list item
+  liSection1.appendChild(aSection1);
+
+  // append list item to navBar
+  navBarList.appendChild(liSection1);
+}
 
 
 // Add class 'active' to section when near top of viewport
