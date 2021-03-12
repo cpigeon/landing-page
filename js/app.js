@@ -34,22 +34,11 @@ const sections = document.querySelectorAll('section');
 function isInViewport(element) {
     const rect = element.getBoundingClientRect();
     return (
-        rect.top >= 0 &&
+        rect.top >= -400 &&
         rect.left >= 0 &&
         rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
         rect.right <= (window.innerWidth || document.documentElement.clientWidth)
     );
-}
-
-// Helper Function to determine if any part of the section is in the viewport
-function isVisible (ele) {
-  const { top, bottom } = ele.getBoundingClientRect();
-  const vHeight = (window.innerHeight || document.documentElement.clientHeight);
-
-  return (
-    (top > 0 || bottom > 0) &&
-    top < vHeight
-  );
 }
 
 /**
