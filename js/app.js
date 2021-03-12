@@ -73,7 +73,16 @@ function createNavBar(sections) {
 }
 
 // Add class 'active' to section when near top of viewport
-
+function addActiveClass(sections) {
+  for (const section of sections) {
+    if (isInViewport(section)) {
+      section.className = "your-active-class";
+    }
+    else {
+      section.classList.remove("your-active-class");
+    }
+  }
+}
 
 // Scroll to anchor ID using scrollTO event
 
@@ -90,3 +99,6 @@ createNavBar(sections)
 // Scroll to section on link click
 
 // Set sections as active
+document.addEventListener('scroll', function(event) {
+  addActiveClass(sections);
+})
