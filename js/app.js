@@ -73,7 +73,14 @@ function addActiveClass(sections) {
   }
 }
 
-// Scroll to anchor ID using scrollTO event
+// Scroll to section using scrollIntoView
+function scrollTo(event) {
+  if (event.target.nodeName === "A") {
+    event.preventDefault();
+    const sectionID = event.target.getAttribute('href');
+    document.querySelector(sectionID).scrollIntoView({behavior: "smooth"});
+  }
+}
 
 
 /**
@@ -86,6 +93,9 @@ function addActiveClass(sections) {
 createNavBar(sections)
 
 // Scroll to section on link click
+document.addEventListener('click', function(event) {
+  scrollTo(event);
+})
 
 // Set sections as active
 document.addEventListener('scroll', function(event) {
