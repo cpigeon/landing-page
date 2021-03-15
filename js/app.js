@@ -17,10 +17,6 @@
  * Define Global Variables
  *
 */
-// const section1 = document.getElementById('section1');
-// const section2 = document.getElementById('section2');
-// const section3 = document.getElementById('section3');
-// const section4 = document.getElementById('section4');
 const navBarList = document.getElementById("navbar__list");
 const sections = document.querySelectorAll('section');
 
@@ -39,7 +35,7 @@ function isInViewport(element) {
         rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
         rect.right <= (window.innerWidth || document.documentElement.clientWidth)
     );
-}
+};
 
 /**
  * End Helper Functions
@@ -53,13 +49,13 @@ function createNavBar(sections) {
   for (const section of sections) {
     const listItem = document.createElement('li');
     const anchorItem = document.createElement('a');
-    let sectionNo = section.getAttribute("data-nav")
+    const sectionNo = section.getAttribute("data-nav");
     anchorItem.textContent = sectionNo;
     anchorItem.setAttribute("href", '#' + section.id);
     listItem.appendChild(anchorItem);
     navBarList.appendChild(listItem);
   }
-}
+};
 
 // Add class 'active' to section when near top of viewport
 function addActiveClass(sections) {
@@ -71,7 +67,7 @@ function addActiveClass(sections) {
       section.classList.remove("your-active-class");
     }
   }
-}
+};
 
 // Scroll to section using scrollIntoView
 function scrollTo(event) {
@@ -80,7 +76,7 @@ function scrollTo(event) {
     const sectionID = event.target.getAttribute('href');
     document.querySelector(sectionID).scrollIntoView({behavior: "smooth"});
   }
-}
+};
 
 
 /**
@@ -90,14 +86,14 @@ function scrollTo(event) {
 */
 
 // Build menu
-createNavBar(sections)
+createNavBar(sections);
 
 // Scroll to section on link click
 document.addEventListener('click', function(event) {
   scrollTo(event);
-})
+});
 
 // Set sections as active
 document.addEventListener('scroll', function(event) {
   addActiveClass(sections);
-})
+});
