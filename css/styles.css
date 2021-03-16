@@ -70,6 +70,20 @@ section {
     text-align: right;
 }
 
+@media (max-width: 430px) {
+  h1 {
+    margin-top: 3em;
+  }
+
+  .navbar__menu li {
+    float: inherit;
+  }
+
+  .navbar__menu a {
+    display: block;
+  }
+}
+
 .navbar__menu li {
     display: inline-block;
 }
