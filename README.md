@@ -2,12 +2,14 @@
 
 ## Table of Contents
 
-* [Instructions](#instructions)
+* [Description](#Description)
 
-## Instructions
+## Description
+This project builds a multi-section landing page. The page content is written in HTML and styled in CSS. The navigation bar is dynamically built in JavaScript. Clicking on a section in the navigation bar will take the user to the corresponding section on the webpage. The current section viewed is distinguished by a box and floating circles.
 
-The starter project has some HTML and CSS styling to display a static version of the Landing Page project. You'll need to convert this project from a static project to an interactive one. This will require modifying the HTML and CSS files, but primarily the JavaScript file.
+## Getting Started
+Here's how you can get up and running:
 
-To get started, open `js/app.js` and start building out the app's functionality
-
-For specific, detailed instructions, look at the project instructions in the Udacity Classroom.
+- Clone or download and unzip the repository
+- Ensure a browser is installed on your computer
+- Open index.html in your preferred browser
