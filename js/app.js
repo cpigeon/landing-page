@@ -26,7 +26,7 @@ const sections = document.querySelectorAll('section');
  *
 */
 
-// Helper Function to determine if the whole Section is in the Viewport
+// Helper Function to determine if the Section is in the Viewport
 function isInViewport(element) {
     const rect = element.getBoundingClientRect();
     return (
@@ -44,7 +44,7 @@ function isInViewport(element) {
 */
 
 
-// build the nav
+// build the nav bar dynamically 
 function createNavBar(sections) {
   for (const section of sections) {
     const listItem = document.createElement('li');
@@ -56,6 +56,7 @@ function createNavBar(sections) {
     navBarList.appendChild(listItem);
   }
 };
+
 
 // Add class 'active' to section when near top of viewport
 function addActiveClass(sections) {
